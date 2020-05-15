@@ -65,19 +65,26 @@ router.post('/signup', (req, res, next) => {
 })
 
 router.post('/login', (req, res, next) => {
+    console.log("entra en login")
     passport.authenticate('local', (err, theUser, failureDetails) => {
         if (err) {
+            console.log(err)
             res.status(500).json({ message: 'Something went wrong authenticating user' });
             return;
         }
 
         if (!theUser) {
+            console.log(failureDetails)
             res.status(401).json(failureDetails);
             return;
         }
 
         req.login(theUser, (err) => {
+          
             if (err) {
+          
+
+console.log(err)
                 res.status(500).json({ message: 'Session save went bad.' });
                 return;
             }
