@@ -1,0 +1,14 @@
+.filmContainer {
+    justify-content: center;
+    align-content: center;
+}
+
+.filmmakersRow {
+    justify-content: center;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}

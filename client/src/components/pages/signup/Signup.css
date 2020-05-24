@@ -1,0 +1,33 @@
+.signUpForm {
+    margin: 30px;
+    padding: 50px;
+    background-color: #557b88;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 25px -5px rgba(0,0,0,0.75);
+}
+
+.signUpForm h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+.darkButton {
+    padding: 10px;
+    border: 3px solid white;
+    font-weight: 600;
+    background-color: rgb(30, 42, 48);
+    color: white;
+    width: 100%;
+    transition: 0.3s
+}
+
+.darkButton:hover {
+    border-color: rgb(30, 42, 48);
+    color: rgb(30, 42, 48);
+    background-color: white;
+}
+
+small {
+    font-size: 1.2em
+}

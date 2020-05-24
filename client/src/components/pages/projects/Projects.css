@@ -1,0 +1,24 @@
+
+.projectsContainer{
+    justify-content: center;
+    padding: 0 200px;
+}
+
+.projectsContainer Button {
+    margin: 20px 0;
+}
+
+.createProjectBtn {
+    font-weight: 600;
+    font-size: 1.3em;
+    padding: 1% 3%;
+    border: 3px solid white;
+    background-color: rgb(231, 93, 0);
+    transition: 0.3s;
+    color: white
+}
+
+.createProjectBtn:hover {
+    background-color: #4b98b1;
+    border: 3px solid white;
+}

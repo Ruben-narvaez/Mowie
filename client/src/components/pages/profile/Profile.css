@@ -1,0 +1,78 @@
+.profile-section {
+    margin: 20px auto;
+    box-shadow: 0px 14px 16px 1px rgba(0,0,0,0.75);
+
+}
+
+.firstProfileRow {
+    background: rgba(2, 37, 53, 0.904);
+    color: #E8DAB2;
+    padding: 40px;
+    align-items: center;
+    min-height: 300px;
+    border-bottom: 3px solid rgba(128, 128, 128, 0.322);
+}
+
+.firstProfileRow img {
+    width: 100%;
+    border: 3px solid #E8DAB2;
+    border-radius: 3%;
+}
+
+.secondProfileRow {
+    background-color: white;
+    color: Black;
+    padding: 40px;
+    min-height: 600px;
+    text-align: center;  
+}
+
+.thirdProfileRow {
+    background-color: #4b98b1;
+    color: #E8DAB2;
+    padding: 40px;
+    min-height: 200px;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.profileButton {
+    display: block;
+    width: 100%;
+    padding: 20px 40px;
+    margin: 10px 30px;
+    font-weight: 600;
+    font-size: 1.3em;
+    border: 2.5px solid #E8DAB2;
+    color:#E8DAB2;
+    transition: 0.5s
+}
+
+.profileButton:hover {
+    border-color: rgba(24, 50, 62, 0.904);
+    color: rgba(24, 50, 62, 0.904);
+    background-color: #E8DAB2;
+}
+
+.buttonList {
+    background-color: white;
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 30px;
+    border: 2.5px solid #4b98b1;
+    color: #4b98b1;
+    transition: 0.3s
+}
+.buttonList:hover {
+    color: white;
+    border-color: white;
+    background-color: #4b98b1;
+}
+
+.secondProfileRow h3 {
+    color: #4b98b1;
+    font-weight: 600;
+}

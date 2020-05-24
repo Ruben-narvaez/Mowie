@@ -1,0 +1,21 @@
+.nav {
+    background-color: #d75a0e;
+    color: #E8DAB2;
+    box-shadow: 1px -9px 8px 9px rgba(0,0,0,0.6);
+}
+
+/* .blueNav {
+    background-color:blue;
+    color: #E8DAB2;
+    box-shadow: 1px -9px 8px 9px rgba(0,0,0,0.6);
+} */
+
+.nav a {
+    color: #E8DAB2;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #EAEAEA
+}

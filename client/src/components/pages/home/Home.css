@@ -1,0 +1,101 @@
+.homeButton {
+    padding: 15px 35px;
+    font-weight: 600;
+    font-size: 1.3em;
+    border: 2.5px solid #4b98b1;
+    color:#4b98b1;
+    transition: 0.3s
+}
+
+.loginButton {
+    padding: 10px 30px;
+    font-weight: 600;
+    font-size: 1.3em;
+    border: 2.5px solid #E8DAB2;
+    color:#E8DAB2;
+    transition: 0.3s
+}
+
+.loginButton:hover {
+  color: rgb(30, 42, 48); 
+  text-decoration: none;
+  background-color: #E8DAB2;
+  border-color: rgb(30, 42, 48);
+}
+
+.homeButton:hover {
+  color: #E8DAB2;
+  background-color: #4b98b1;
+  text-decoration: none;
+  border-color: rgb(241, 233, 207);
+}
+
+.homePhrase {      
+    background-color: rgb(241, 233, 207);
+    text-align: right;
+    align-items: right;
+}
+
+.colPhrase {
+    padding: 8% 2% 12% 12%; 
+}
+
+h1 {
+    color: black;
+    font-size: 4.5em;
+    font-weight: bold;
+    margin-bottom: 15%;
+    text-align: right;
+}
+
+.bluePhrase {
+    padding: 10% 12% 12% 10%;
+    color: #E8DAB2;
+}
+
+.blueRow {   
+    background-color: #4b98b1;
+}
+
+.bluePhrase h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 15%;
+    text-align: left;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 15%;
+}
+
+.travolta {
+    background-image: url("../../ui/ImageFoBack/travol.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: left;
+}
+
+.miaWallace {
+    background-image: url("../../ui/ImageFoBack/miawallace.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: right;
+}
+
+.homeFooter {
+    background-color: rgb(24, 49, 61);
+    padding: .5%;
+    color: #E8DAB2;
+    display: flex;
+    justify-content: center;
+}
+
+.homeFooter p {
+    margin-top: 1%;
+    text-align: center;
+    font-weight: 600;
+}
