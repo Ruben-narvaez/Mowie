@@ -102,6 +102,15 @@ class ProjectDetails extends Component {
         this.getProjectInfo()
     }
 
+    removeUserFromProject() {
+        this.projectsService.removeUser(this.props.match.params.id)
+            .then(response => this.setState({
+                projectInfo: response.data
+            }))
+            .catch(err => console.log(err))
+        this.getProjectInfo()
+    }
+
     getCommentsByProject = (eventId) => {
         this.commentService
             .getCommentsbyProject(eventId)
@@ -200,7 +209,8 @@ class ProjectDetails extends Component {
 
                 <Row className="detailsFourthRow">
                     <Col className="projectDetailButtons">
-                        {this.state.creator && this.state.creator._id === this.props.loggedInUser._id || this.state.userOnProject === true ? null : <Button className="projectButton" onClick={() => this.addUserToProject()} variant="dark" size="md">Unirse al proyecto</Button>}
+                        
+                        {this.state.creator && this.state.creator._id === this.props.loggedInUser._id || this.state.userOnProject === true ? <Button className="projectButton" onClick={() => this.removeUserFromProject()} variant="dark" size="md">Salir del proyecto</Button> : <Button className="projectButton" onClick={() => this.addUserToProject()} variant="dark" size="md">Unirse al proyecto</Button>}
                         <Button className="projectButton" onClick={() => this.handleModal(true, "createComment")}>Escribir comentario</Button>
                         <Button className="projectButton" onClick={this.goBack} >Volver</Button>
                     </Col>
@@ -216,7 +226,7 @@ class ProjectDetails extends Component {
                     <Col md={8} >
                         {this.state.comments &&
                             this.state.comments.map((elm) => (
-                                <Comment key={elm._id} {...elm} loggedInUser={this.props.loggedInUser} />
+                                <Comment key={elm._id} {...elm} history={this.props.history} componentDidMount={this.componentDidMount} loggedInUser={this.props.loggedInUser} />
                             ))}
                     </Col>
                 </Row>

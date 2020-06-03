@@ -16,4 +16,10 @@ router.get("/getcommentsbyproject/:id", ensureLogin.ensureLoggedIn(), (req, res,
         .catch(err => next(new Error(err)))
 })
 
+router.get('/deleteComment/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+    Comment.findByIdAndRemove(req.params.id)
+        .then(data => res.json(data))
+        .catch(err => next(new Error(err)))
+})
+
 module.exports = router

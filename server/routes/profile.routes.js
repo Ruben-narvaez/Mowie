@@ -12,3 +12,4 @@ router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
 })
 
 module.exports = router
+

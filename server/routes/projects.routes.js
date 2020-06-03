@@ -59,4 +59,10 @@ router.post('/addUser/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
         .catch(err => next(new Error(err)))
 })
 
+router.post('/removeUser/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
+    Project.findByIdAndUpdate(req.params.id, { $pull: { users: req.user._id } })
+        .then(data => res.json(data))
+        .catch(err => next(new Error(err)))
+})
+
 module.exports = router

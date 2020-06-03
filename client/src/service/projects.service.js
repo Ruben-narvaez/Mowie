@@ -14,6 +14,6 @@ export default class services {
     deleteProject = id => this.service.get(`/projects/deleteProject/${id}`)
     editProject = (id, project) => this.service.post(`/projects/editProject/${id}`, project)
     addUser = (id, project) => this.service.post(`/projects/addUser/${id}`, project)
-    
+    removeUser = (id, project) => this.service.post(`/projects/removeUser/${id}`, project)  
         
 } 
