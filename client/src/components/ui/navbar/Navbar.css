@@ -1,14 +1,15 @@
-.nav {
+/* .nav {
     background-color: #d75a0e;
     color: #E8DAB2;
     box-shadow: 1px -9px 8px 9px rgba(0,0,0,0.6);
-}
+} */
 
-/* .blueNav {
-    background-color:blue;
+.nav {
+    background-color: #3e3e3e;
     color: #E8DAB2;
     box-shadow: 1px -9px 8px 9px rgba(0,0,0,0.6);
-} */
+    z-index: 2;
+}
 
 .nav a {
     color: #E8DAB2;

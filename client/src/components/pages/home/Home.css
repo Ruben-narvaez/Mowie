@@ -4,7 +4,8 @@
     font-size: 1.3em;
     border: 2.5px solid #4b98b1;
     color:#4b98b1;
-    transition: 0.3s
+    transition: 0.3s;
+    z-index: 2;
 }
 
 .loginButton {
@@ -31,30 +32,86 @@
 }
 
 .homePhrase {      
-    background-color: rgb(241, 233, 207);
-    text-align: right;
-    align-items: right;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    align-items: left;
+    padding: 5% 0 0 0;
+}
+
+.homePhrase img {
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    float: center;
+    z-index: 1;
+    position: relative
 }
 
 .colPhrase {
+    text-align: center;
     padding: 8% 2% 12% 12%; 
 }
 
 h1 {
-    color: black;
+    color: #3e3e3e;
     font-size: 4.5em;
     font-weight: bold;
     margin-bottom: 15%;
     text-align: right;
+    padding: 2%;
+    z-index: 2;
+}
+
+.colBlue {
+    text-align: center;
 }
 
 .bluePhrase {
+    text-align: center;
     padding: 10% 12% 12% 10%;
-    color: #E8DAB2;
+    color: rgb(255, 255, 255);
 }
 
 .blueRow {   
-    background-color: #4b98b1;
+    background-color: #40a3c4;
+    align-items: top;
+    justify-content: right;
+    padding: 5% 0 0 0;
+    color: white;
+}
+
+.blueRow img {
+    max-width: 50%;
+}
+
+.blueRow h4 {
+    font-weight: bold;
+    margin: 2%;
+}
+
+.role img {
+    width: 35%;
+    margin-bottom: 2%;
+}
+
+.lastRow {
+    background-color: white;
+    padding: 10% 30% 0 30%;
+}
+
+.lastRow img {
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+    float: center;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.lastRow h1 {
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .bluePhrase h2 {
@@ -70,20 +127,22 @@ h2 {
     margin-bottom: 15%;
 }
 
-.travolta {
-    background-image: url("../../ui/ImageFoBack/travol.png");
-    background-size: contain;
+.backImg1 {
+    background-image: url("../../ui/ImageFoBack/1.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-x: left;
 }
 
-.miaWallace {
-    background-image: url("../../ui/ImageFoBack/miawallace.png");
-    background-size: contain;
+.backImg2 {
+    background-image: url("../../ui/ImageFoBack/2.png");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-x: right;
+}
+
+.backImg3 {
+    background-image: url("../../ui/ImageFoBack/3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .homeFooter {
