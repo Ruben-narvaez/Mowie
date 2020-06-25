@@ -2,8 +2,8 @@
     padding: 15px 35px;
     font-weight: 600;
     font-size: 1.3em;
-    border: 2.5px solid #4b98b1;
-    color:#4b98b1;
+    border: 2.5px solid white;
+    color:white;
     transition: 0.3s;
     z-index: 2;
 }
@@ -12,23 +12,23 @@
     padding: 10px 30px;
     font-weight: 600;
     font-size: 1.3em;
-    border: 2.5px solid #E8DAB2;
-    color:#E8DAB2;
+    border: 2.5px solid white;
+    color:white;
     transition: 0.3s
 }
 
 .loginButton:hover {
-  color: rgb(30, 42, 48); 
+  color: #3e3e3e; 
   text-decoration: none;
-  background-color: #E8DAB2;
-  border-color: rgb(30, 42, 48);
+  background-color: white;
+  border-color: #3e3e3e;
 }
 
 .homeButton:hover {
-  color: #E8DAB2;
-  background-color: #4b98b1;
+  color: #3e3e3e;
+  background-color: white;
   text-decoration: none;
-  border-color: rgb(241, 233, 207);
+  border-color: #3e3e3e;
 }
 
 .homePhrase {      
@@ -38,30 +38,102 @@
     padding: 5% 0 0 0;
 }
 
-.homePhrase img {
-    width: 450px;
+.imgPhrase img {
+    width: 350px;
     max-width: 100%;
+    padding: 10% 0 5% 0;
     height: auto;
     float: center;
-    z-index: 1;
+    z-index: 0;
     position: relative
+}
+
+.colPhrase img {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    float: center
 }
 
 .colPhrase {
     text-align: center;
-    padding: 8% 2% 12% 12%; 
-}
+    padding: 0 2% 12% 12%;
+    }
 
-h1 {
+.homePhrase h1 {
     color: #3e3e3e;
-    font-size: 4.5em;
+    font-size: 5em;
     font-weight: bold;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     text-align: right;
     padding: 2%;
     z-index: 2;
 }
 
+@media (max-width: 883px) {
+    .homePhrase h1 {
+        font-size: 3em;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+
+    .colPhrase {
+    padding: 0 1% 15% 1%;
+    }
+
+}
+
+@media (max-width: 1163px){
+   
+
+    .colPhrase {
+    padding: 0 1% 15% 1%;
+    }
+} 
+
+@media (max-width: 1682px){
+    .homePhrase h1 {
+        font-size: 3.5em
+    }
+}
+
+@media (max-width: 450px) {
+    .homePhrase h1{
+        font-size: 2.5em;       
+    }
+
+    .mowieText h3 {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lastRow h1{
+        font-size: .5em;
+    }
+
+    .lastRow .mowieCol img {
+    width: 90vw;
+    max-width: 90vw;
+    float: center;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 20px;
+    }
+
+    .mowieCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0
+    }
+
+    .lastRow .mowieCol h1 {
+        font-size: 2em
+    }
+
+};
+  
 .colBlue {
     text-align: center;
 }
@@ -73,7 +145,8 @@ h1 {
 }
 
 .blueRow {   
-    background-color: #40a3c4;
+    background-color: #46b1d4;
+    text-align: center;
     align-items: top;
     justify-content: right;
     padding: 5% 0 0 0;
@@ -96,12 +169,13 @@ h1 {
 
 .lastRow {
     background-color: white;
-    padding: 10% 30% 0 30%;
+    color: #3e3e3e;
+    padding: 6% 5% 3% 5%;
 }
 
 .lastRow img {
     width: 700px;
-    max-width: 100%;
+    max-width: 50vw;
     height: auto;
     float: center;
     z-index: 1;
@@ -109,9 +183,24 @@ h1 {
     margin-bottom: 20px;
 }
 
-.lastRow h1 {
+/* .lastRow h1 {
+    font-size: 2.5em;
     margin-bottom: 5px;
     text-align: center;
+} */
+
+.mowieText {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 80px 5% 20px 5%;
+}
+
+.mowieCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
 }
 
 .bluePhrase h2 {
@@ -146,9 +235,9 @@ h2 {
 }
 
 .homeFooter {
-    background-color: rgb(24, 49, 61);
+    background-color: #3e3e3e;;
     padding: .5%;
-    color: #E8DAB2;
+    color: white;
     display: flex;
     justify-content: center;
 }

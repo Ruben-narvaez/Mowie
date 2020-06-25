@@ -8,6 +8,7 @@ import Filmmaker from '../../ui/ImagesforCol/undraw_videographer_nnc7.svg'
 import Connect from '../../ui/ImagesforCol/handshake-colour.svg'
 import Role from '../../ui/ImagesforCol/mirror-pose-colour.svg'
 import ProjectShare from '../../ui/ImagesforCol/drawkit-content-man-colour.svg'
+import Logo from '../../ui/ImagesforCol/mowie-logo.png'
 
 
 import './Home.css'
@@ -18,12 +19,11 @@ const Home = () => {
         <Container fluid={true}>
             <Row className="homePhrase backImg1">
                 <Col className="colPhrase" md="6">
-                    <section>   
-                        <h1>La red social de los filmmakers independientes</h1>
-                    </section>
+                    <img src={Logo} alt="logo" />
+                    <h1>La red social de los filmmakers independientes</h1>                   
                 <Link className="homeButton" to="/signup" >Crea tu cuenta</Link>
                 </Col>
-                <Col md="6">
+                <Col className="imgPhrase" md="6">
                     <img src={Videographer} alt="Videographer" />
                 </Col>
             </Row>
@@ -49,8 +49,11 @@ const Home = () => {
                 </Col>
             </Row>
             <Row className="lastRow backImg3">
-                <h1>¡Te estamos esperando!</h1>
-                <Col md="12">
+                <Col className="mowieText" lg="6">
+                    <h3><b>Mowie</b> nace con la idea de unir a todos aquellos que quieran colaborar en proyectos audiovisuales independientes. Un lugar de encuentro para los amantes del séptimo arte que buscan desarrollar sus proyectos y encontrar colaboradores.</h3>
+                </Col>
+                <Col className="mowieCol" lg="6">
+                    {/* <h1><b>¡Te estamos esperando!</b></h1> */}
                     <img src={Filmmaker} alt="filmmaker" />
                 </Col>
             </Row>

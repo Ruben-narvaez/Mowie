@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
 import AuthService from './../../../service/auth.service'
+import Logo from '../ImagesforCol/logo-navbar.png'
 
 import { Link } from 'react-router-dom'
 import './Navbar.css'
@@ -25,10 +26,10 @@ class Navigation extends Component {
 
         return (
             <Navbar className="nav" expand="md">
-                <Navbar.Brand as="div"><Link to="/">PluggedIn</Link></Navbar.Brand>
+                <Navbar.Brand as="div"><Link to="/"><img className="navLogo" src={Logo} alt="logo" /></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav>
+                <Navbar.Collapse className="navEnd" id="basic-navbar-nav">
+                    <Nav >
                         {
                             !this.props.loggedInUser ?
                                 <>
@@ -48,7 +49,7 @@ class Navigation extends Component {
                         }
 
                     </Nav>
-                    <Navbar.Text className="ml-auto"> {this.props.loggedInUser ? this.props.loggedInUser.username : 'invitad@'}</Navbar.Text>
+                    {/* <Navbar.Text className="ml-auto"> {this.props.loggedInUser ? this.props.loggedInUser.username : 'invitad@'}</Navbar.Text> */}
                 </Navbar.Collapse>
 
             </Navbar>
