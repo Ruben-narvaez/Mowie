@@ -80,7 +80,7 @@ class ProjectDetails extends Component {
 
     getGoogleMap() {
         let location = this.state.location
-        let key = "AIzaSyC29nPtAOUTrCqRJPRmCYcrd-amYUtPeUU"
+        let key = process.env.REACT_APP_GOOGLE_KEY
         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${key}`).then(geores => {
             let latitude = geores.data.results[0].geometry.location.lat
             let longitude = geores.data.results[0].geometry.location.lng
