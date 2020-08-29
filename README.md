@@ -1,4 +1,4 @@
-# Mowie
+# Mowie :camera:
 
 Mowie es mi proyecto de fin de curso, una red social usando el stack MERN.
 
