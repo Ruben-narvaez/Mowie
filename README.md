@@ -1,6 +1,6 @@
 # Mowie :camera:
 
->Mowie es mi proyecto de fin de curso, el cual lo puedes encontrar siguiendo este enlace: [Mowie social network](https://mowie->social.herokuapp.com/), una red social usando el stack MERN.
+>Mowie es mi proyecto de fin de curso, el cual lo puedes encontrar siguiendo este enlace: [Mowie social network](https://mowie-social.herokuapp.com/), una red social usando el stack MERN.
 
   - MongoDB
   - Express
