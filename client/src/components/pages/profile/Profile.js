@@ -31,7 +31,7 @@ class Profile extends Component {
     render() {
         if (this.state.user) {
             const { name, lastname, picture, team, projects, following, followers } = this.state.user
-            
+
             return (
                 <>
                     <Container className="profile-section">
