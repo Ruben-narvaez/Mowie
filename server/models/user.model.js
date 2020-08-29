@@ -42,6 +42,8 @@ const userSchema = new Schema({
     },
     age: Number,
     projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
+    following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     team: {
         type: String,
         // required: true,

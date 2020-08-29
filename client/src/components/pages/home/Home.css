@@ -10,6 +10,8 @@
 
 .loginButton {
     padding: 10px 30px;
+    align-self: center;
+    width: 250px;
     font-weight: 600;
     font-size: 1.3em;
     border: 2.5px solid white;
@@ -52,22 +54,149 @@
     width: 250px;
     max-width: 100%;
     height: auto;
-    float: center
+    /* float: center */
 }
 
 .colPhrase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 0 2% 12% 12%;
     }
 
 .homePhrase h1 {
-    color: #3e3e3e;
+    color: #303030;
     font-size: 5em;
     font-weight: bold;
     margin-bottom: 10%;
     text-align: right;
     padding: 2%;
     z-index: 2;
+}
+
+.colBlue {
+    text-align: center;
+}
+
+.bluePhrase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10% 12% 12% 10%;
+    color: rgb(255, 255, 255);
+}
+
+.blueRow {   
+    background-color: #46b1d4;
+    text-align: center;
+    align-items: top;
+    justify-content: right;
+    padding: 5% 0 0 0;
+    color: white;
+}
+
+.blueRow img {
+    max-width: 50%;
+}
+
+.blueRow h4 {
+    font-weight: bold;
+    margin: 2%;
+}
+
+.role img {
+    width: 35%;
+    margin-bottom: 2%;
+}
+
+.lastRow {
+    background-color: white;
+    color: #303030;
+    padding: 6% 5% 3% 5%;
+}
+
+.lastRow img {
+    width: 700px;
+    max-width: 50vw;
+    height: auto;
+    float: center;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mowieText {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 80px 5% 20px 5%;
+}
+
+.mowieText h3 {
+    font-size: 2em;
+}
+
+.mowieCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+}
+
+.bluePhrase h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 15%;
+    text-align: left;
+}
+
+.bluePhrase h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 15%;
+}
+
+.backImg1 {
+    background-image: url("../../ui/ImageFoBack/1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.backImg2 {
+    background-image: url("../../ui/ImageFoBack/2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 680px;
+    height: 880px;
+}
+
+.backImg3 {
+    background-image: url("../../ui/ImageFoBack/3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+@media (max-width: 1682px){
+    .homePhrase h1 {
+        font-size: 3.5em
+    }
+}
+
+@media (max-width: 1163px){  
+    .colPhrase {
+        padding: 0 1% 15% 1%;
+    }
+} 
+
+@media (max-width: 992px) {
+    .bluePhrase {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 883px) {
@@ -77,29 +206,24 @@
         padding-bottom: 5%;
     }
 
-    .colPhrase {
-    padding: 0 1% 15% 1%;
+     .colPhrase {
+    padding: 0 1% 15% 10%;
     }
-
 }
 
-@media (max-width: 1163px){
-   
-
-    .colPhrase {
-    padding: 0 1% 15% 1%;
+@media (max-width: 767px) {
+    .mowieText h3 {
+        font-size: 1.3em
     }
-} 
 
-@media (max-width: 1682px){
-    .homePhrase h1 {
-        font-size: 3.5em
+     .colPhrase {
+    padding: 0 1% 15% 1%;
     }
 }
 
 @media (max-width: 450px) {
     .homePhrase h1{
-        font-size: 2.5em;       
+        font-size: 2.5em;   
     }
 
     .mowieText h3 {
@@ -132,120 +256,8 @@
         font-size: 2em
     }
 
-};
-  
-.colBlue {
-    text-align: center;
+    /* .backImg2 {
+       height: 600px;
+       min-height: 0px;
+    } */
 }
-
-.bluePhrase {
-    text-align: center;
-    padding: 10% 12% 12% 10%;
-    color: rgb(255, 255, 255);
-}
-
-.blueRow {   
-    background-color: #46b1d4;
-    text-align: center;
-    align-items: top;
-    justify-content: right;
-    padding: 5% 0 0 0;
-    color: white;
-}
-
-.blueRow img {
-    max-width: 50%;
-}
-
-.blueRow h4 {
-    font-weight: bold;
-    margin: 2%;
-}
-
-.role img {
-    width: 35%;
-    margin-bottom: 2%;
-}
-
-.lastRow {
-    background-color: white;
-    color: #3e3e3e;
-    padding: 6% 5% 3% 5%;
-}
-
-.lastRow img {
-    width: 700px;
-    max-width: 50vw;
-    height: auto;
-    float: center;
-    z-index: 1;
-    position: relative;
-    margin-bottom: 20px;
-}
-
-/* .lastRow h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
-    text-align: center;
-} */
-
-.mowieText {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    padding: 80px 5% 20px 5%;
-}
-
-.mowieCol {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px;
-}
-
-.bluePhrase h2 {
-    font-weight: 600;
-    font-size: 2.5em;
-    margin-bottom: 15%;
-    text-align: left;
-}
-
-h2 {
-    font-weight: 600;
-    font-size: 2.5em;
-    margin-bottom: 15%;
-}
-
-.backImg1 {
-    background-image: url("../../ui/ImageFoBack/1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.backImg2 {
-    background-image: url("../../ui/ImageFoBack/2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.backImg3 {
-    background-image: url("../../ui/ImageFoBack/3.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.homeFooter {
-    background-color: #3e3e3e;;
-    padding: .5%;
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.homeFooter p {
-    margin-top: 1%;
-    text-align: center;
-    font-weight: 600;
-}
-
-/* color para la nueva identidad de la app: #00b2d7 */

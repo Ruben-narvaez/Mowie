@@ -1,14 +1,54 @@
 .filmContainer {
     justify-content: center;
     align-content: center;
+    margin-top: 40px;
+    padding: 0 40px;
 }
 
 .filmmakersRow {
+    margin-top: 20px;
+    display: flex;
     justify-content: center;
 }
 
-h2 {
-    margin-top: 40px;
-    margin-bottom: 30px;
+.filmContainer h2 {
+    padding: 20px;
+    font-weight: 400;
     text-align: center;
+}
+
+.filmContainer:before {
+    content: '';
+    position: fixed; 
+    top: -4000px;
+    right: 200px;
+    width: 6000px;
+    height: 6000px;
+    border-radius: 50%;
+    z-index: -100;
+    background-color: #46b1d4;
+}
+
+@media (max-width: 800px) {
+    .filmContainer:before {
+        top: -4000px;
+        right: -100px;
+}
+
+.filmContainer {
+        padding: 0 32px;
+    }
+
+}
+
+@media (max-width: 482px) {
+      .filmContainer:before {
+        top: -4000px;
+        right: -300px;
+    }
+    
+}
+
+@media (max-width: 346px) {
+    /* hay que reducir la escala */
 }

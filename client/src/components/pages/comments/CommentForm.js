@@ -35,16 +35,16 @@ class CommentForm extends Component {
     render() {
 
         return (
-            <Container className="commentForm" as="section">
+            <Container className="commentForm">
                 <h2>Escribe tu comentario</h2>
                 <hr />
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group controlId="description">
-                        <Form.Control className="input" name="content" type="textarea" rows="3" value={this.state.content} onChange={this.handleChange} />
+                        <Form.Control className="input" name="content" as="textarea" rows="3" value={this.state.content} onChange={this.handleChange} />
                     </Form.Group>
                     <div className="buttons">
-                        <Button className="modalButton" type="submit">Crear comentario</Button>
-                        <Button className="modalButton" onClick={() => this.props.closeModal()}> Cerrar</Button>
+                        <Button className="editButton" type="submit">Crear comentario</Button>
+                        <Button className="redButton" onClick={() => this.props.closeModal()}> Cerrar</Button>
                     </div>
                 </Form>
             </Container>

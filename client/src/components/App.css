@@ -1,9 +1,9 @@
  
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 body {
   font-weight: 300;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: rgb(255, 255, 255);
 }
 
@@ -36,6 +36,22 @@ a, a:hover {
   min-height: 100vh;
 }
 
+
+.homeFooter {
+    background-color: #3e3e3e;
+    color: white;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeFooter p {
+    font-weight: 400;
+    margin: 0;
+}
 /* .homeFooter {
     background-color: rgb(24, 49, 61);
     padding: .5%;
@@ -46,9 +62,8 @@ a, a:hover {
     bottom: 0;
     width: 100%;   
 }
+ */
 
-.homeFooter p {
-    margin-top: 1%;
-    text-align: center;
-    font-weight: 600;
-} */
+ element.style {
+   padding-left: 0px;
+ }

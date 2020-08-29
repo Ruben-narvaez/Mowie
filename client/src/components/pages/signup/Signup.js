@@ -59,10 +59,10 @@ class Signup extends Component {
     render() {
 
         return (
-            <Container>
+            <Container fluid={true} className='loginBody'>
 
-                <Row>
-                    <Col className="signUpForm">
+                <Row className="loginRow">
+                    <Col className="loginForm">
                         <h3>Registro de usuario</h3>
                         <hr></hr>
                         <Form onSubmit={this.handleSubmit}>
@@ -103,8 +103,8 @@ class Signup extends Component {
                             </Form.Group>
 
                             <Form.Group controlId="team">
-                                <Form.Label>¿De qué equipo eres?</Form.Label>
-                                <Form.Control size="md" as="select" name="team" type="text" value={this.state.team} onChange={this.handleInputChange}>
+                                <Form.Label>¿De qué equipo de la producción eres?</Form.Label>
+                                <Form.Control size="sm" as="select" name="team" type="text" value={this.state.team} onChange={this.handleInputChange}>
                                     <option>Seleccionar</option>
                                     <option>Dirección</option>
                                     <option>Guión</option>
@@ -125,7 +125,7 @@ class Signup extends Component {
                                 style={{ display: this.state.errorMessage ? 'block' : 'none' }}
                             >{this.state.errorMessage}</p>
 
-                            <Button className="darkButton" type="submit">Registrarme</Button>
+                            <Button className="myLoginButton" type="submit">Registrarme</Button>
                         </Form>
 
                         <p><small>¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></small></p>

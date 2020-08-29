@@ -22,7 +22,10 @@ class App extends Component {
 
   constructor() {
     super()
-    this.state = { loggedInUser: null }
+    this.state = {
+      loggedInUser: null,
+      dataFromFilmmakers: null
+    }
     this.authService = new AuthService()
   }
 
@@ -36,11 +39,18 @@ class App extends Component {
     }
   }
 
+  getFilmmakersData = (data) => {
+
+    this.setState({ dataFromFilmmakers: data });
+  }
+
+  componentDidMount() {
+    this.getFilmmakersData()
+  }
 
   render() {
 
     this.fetchUser()
-
     return (
       <>
         <Navigation setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} />
@@ -49,7 +59,7 @@ class App extends Component {
 
           <Switch>
             <Route path="/" exact render={() => <Home loggedInUser={this.state.loggedInUser}/>} />
-            <Route path="/filmmakers" exact render={() => this.state.loggedInUser ? <Filmmakers loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" /> } />
+            <Route path="/filmmakers" exact render={() => this.state.loggedInUser ? <Filmmakers filmmakersData={this.getFilmmakersData} loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" /> } />
             <Route path="/projects" exact render={() => this.state.loggedInUser ? <Projects loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />} />
             <Route path="/projects/details/:id" exact render={props => this.state.loggedInUser ? <ProjectsDetails loggedInUser={this.state.loggedInUser} {...props} /> : <Redirect to="/" />} />
             <Route path="/projects/details/:id/edit" render={() => this.state.loggedInUser ? <EditProject user={this.state.loggedInUser} /> : <Redirect to="/" />} />

@@ -23,8 +23,15 @@ class FilmmakerList extends Component {
             .catch(err => console.log(err))
     }
 
+    sendFilmmakersToDad = () => {  
+        let filmmakersList
+        this.state.filmmakers.length > 0 && (filmmakersList = this.state.filmmakers)
+        this.props.filmmakersData(filmmakersList)
+    }
+
     componentDidMount = () => {
         this.getAllFilmmakers()
+        this.sendFilmmakersToDad()
     }
 
     render() {

@@ -24,7 +24,6 @@ class ProjectsList extends Component {
 
     handleModal = visible => this.setState({ modalShow: visible })
     
-
     getAllProjects = () => {
         this.projectsService.getProjects()
             .then(response => this.setState({ projects: response.data }))
@@ -36,18 +35,18 @@ class ProjectsList extends Component {
     }
 
     finishNewProject = () => {
-        this.getAllProjects()
-        this.handleModal(false)
-       
+        this.componentDidMount()
+        // this.getAllProjects()
+        this.handleModal(false)  
     }
 
     render() {
         return (
             <Container fluid={true} as="section" className="projectsContainer">
                 <h2>Proyectos de la comunidad</h2>
-                <Button onClick={() => this.handleModal(true)} className="createProjectBtn">Crear un nuevo proyecto</Button>
+                <Button onClick={() => this.handleModal(true)} className="editButton">Crear proyecto</Button>
                 <Row className="projectsRow">
-                    {this.state.projects.map(elm => <ProjectCard key={elm._id} {...elm} />)}
+                        {this.state.projects.map(elm => <ProjectCard key={elm._id} {...elm} />)}                                      
                 </Row>
 
                 <Modal show={this.state.modalShow} onHide={() => this.handleModal(false)}>

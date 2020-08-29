@@ -10,12 +10,12 @@ import './ProjectCard.css'
 const ProjectCard = props => {
 
     return (
-        <Col md={3}>
+        <Col xl={3} lg={4} sm={6}>
             <Link to={`/projects/details/${props._id}`} >
-            <Card bg="light" border="light" as="article" className="projectCards">
+            <Card  as="article" className="projectCards">
                 <Card.Img variant="top" className="projectCardImg" src={props.poster} />
                 <Card.Body>
-                        <Card.Title><b>{props.title}</b></Card.Title>
+                    <Card.Title><b>{props.title}</b></Card.Title>
                     <Card.Title>{props.genre} - {props.format}</Card.Title>
                     {/* <Card.Text className="projectDesc"> {props.description} </Card.Text> */}
                     <Card.Text> Lugar: {props.location} </Card.Text>

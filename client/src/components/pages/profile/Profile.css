@@ -1,78 +1,233 @@
 .profile-section {
-    margin: 20px auto;
-    box-shadow: 0px 14px 16px 1px rgba(0,0,0,0.75);
-
+    min-height: 100vh;
 }
 
-.firstProfileRow {
-    background: rgba(2, 37, 53, 0.904);
-    color: #E8DAB2;
-    padding: 40px;
+.firstProfileCol {
+    min-height: 100vh;    
     align-items: center;
-    min-height: 300px;
-    border-bottom: 3px solid rgba(128, 128, 128, 0.322);
+    padding: 0 10px;
 }
 
-.firstProfileRow img {
-    width: 100%;
-    border: 3px solid #E8DAB2;
-    border-radius: 3%;
+.profileCard {
+    min-height: 400px;
+    margin-top: 40px;
+    border: 1px solid rgba(206, 206, 206, 0.342);
 }
 
-.secondProfileRow {
-    background-color: white;
-    color: Black;
-    padding: 40px;
-    min-height: 600px;
-    text-align: center;  
-}
-
-.thirdProfileRow {
-    background-color: #4b98b1;
-    color: #E8DAB2;
-    padding: 40px;
-    min-height: 200px;
-    align-content: space-around;
-    justify-content: space-around;
-}
-
-.profileButton {
-    display: block;
-    width: 100%;
-    padding: 20px 40px;
-    margin: 10px 30px;
-    font-weight: 600;
+h3 {
+    font-weight: 500;
     font-size: 1.3em;
-    border: 2.5px solid #E8DAB2;
-    color:#E8DAB2;
-    transition: 0.5s
 }
 
-.profileButton:hover {
-    border-color: rgba(24, 50, 62, 0.904);
-    color: rgba(24, 50, 62, 0.904);
-    background-color: #E8DAB2;
+h4 {
+    font-weight: 500;
+    font-size: 1.2em;
 }
 
-.buttonList {
-    background-color: white;
-    display: block;
+h5{
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.justBlueTop {
+    background: rgb(70,177,212);
+    background: -moz-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46b1d4",endColorstr="#b8b0ff",GradientType=1);
+    height: 120px;
+}
+
+.usr-pic {
+    position: relative;
+    bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.firstProfileCol img {
+    width: 160px;
+    border: 4px solid white;
+    border-radius: 100px;
+    float: none;
+}
+
+.followed {
+    margin: 20px 0;
+    min-height: 240px;
+    border: 1px solid rgba(206, 206, 206, 0.342);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
-    font-size: 1.1em;
-    font-weight: 600;
-    width: 100%;
-    padding: 10px 30px;
-    border: 2.5px solid #4b98b1;
-    color: #4b98b1;
-    transition: 0.3s
-}
-.buttonList:hover {
-    color: white;
-    border-color: white;
-    background-color: #4b98b1;
 }
 
-.secondProfileRow h3 {
-    color: #4b98b1;
+#followedPics {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    height: 72%;
+    width: 100%;
+    align-items: center;
+}
+
+#followedPics img {
+    width: 56px;
+    margin: 5px;
+    border-radius: 100px;
+}
+
+.picturesRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.col-md-9 {
+    padding: 0 10px;
+}
+
+.myProjects {
+    margin: 40px 0 32px 0;
+    padding: 20px;
+    min-height: 400px;
+    border-top: 4px solid #46b1d4;
+    border-right: 1px solid rgba(206, 206, 206, 0.342);
+    border-left: 1px solid rgba(206, 206, 206, 0.342);
+    border-bottom: 1px solid rgba(206, 206, 206, 0.342);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.separate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 330px;
+}
+
+.myProjects h3 {
+    margin-bottom: 20px;
+}
+
+.projectsDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+    width: 100%;
+}
+
+.projectsDisplay img {
+    width: 140px;
+    margin: 8px 8px 8px 16px;
+}
+
+.userNameTeam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 88px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(206, 206, 206, 0.342);
+}
+
+.profileProjectsNumber {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 5px;
+    border-bottom: 1px solid rgba(206, 206, 206, 0.342);
+}
+
+.lastProfileDiv {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 5px;
+}
+
+.profileProjectCards {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.noProjects {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.titleForCard {
+    border-bottom: 1px solid rgba(206, 206, 206, 0.542);
+}
+
+.dataForCard {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+ .buttonList {
+    background-color: white;
+    min-height: 132px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    margin: 5px;
+    border: 1px solid rgba(206, 206, 206, 0.342);
+   -webkit-box-shadow: 0px 0px 18px -16px rgba(168,168,168,1);
+    -moz-box-shadow: 0px 0px 18px -16px rgba(168,168,168,1);
+    box-shadow: 0px 0px 18px -16px rgba(168,168,168,1);
+    transition: 0.3s
+} 
+
+.buttonList:hover {
+    box-shadow: 0px 0px 25px -5px rgba(167, 167, 167, 0.75);    
+}
+
+.myProjectsButton {
+    padding: 10px;
+    margin: 10px 0;
     font-weight: 600;
+    border: 0px;
+    background: rgb(70,177,212);
+    background: -moz-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46b1d4",endColorstr="#b8b0ff",GradientType=1);
+    color: white;
+    width: 240px;
+    transition: 0.3s;
+    border-radius: 16px
+}
+
+.myProjectsButton:hover {
+    color: white;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.82);
+    box-shadow: 0 0 16px -6px rgba(0,0,0,0.80);
+}
+
+@media (max-width: 400px) {
+    .projectsDisplay img {
+        width: 80px;
+    }
 }

@@ -19,6 +19,7 @@ class EditProject extends Component {
             format: this.props.format,
             poster: this.props.poster,
             location: this.props.location,
+            date: this.props.date,
         }
         this.projectService = new ProjectService()
     }
@@ -63,7 +64,7 @@ class EditProject extends Component {
                                 </Form.Group>
                                 <Form.Group controlId="date">
                                     <Form.Label>Fecha aproximada del fin de proyecto</Form.Label>
-                                    <Form.Control name="date" type="text" value={this.state.date} onChange={this.handleInputChange} />
+                                    <Form.Control name="date" type="date" value={this.state.date} onChange={this.handleInputChange} />
                                 </Form.Group>
                                 <Form.Group controlId="genre">
                                         <Form.Label>Género</Form.Label>
@@ -98,8 +99,8 @@ class EditProject extends Component {
                                     <Form.Control name="poster" type="file" onChange={this.handleFileUpload} />
                                 </Form.Group> */}
                                 <div className="buttons">
-                                    <Button className="modalButton" type="submit" >Actualizar</Button>
-                                    <Button className="modalButton" onClick={() => this.props.closeModal()}> Cerrar</Button>                                   
+                                    <Button className="editButton" type="submit" >Actualizar</Button>
+                                    <Button className="redButton" onClick={() => this.props.closeModal()}> Cerrar</Button>                                   
                                 </div>
                             </Form>
                         </Col>

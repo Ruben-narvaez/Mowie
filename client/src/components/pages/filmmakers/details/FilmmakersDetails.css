@@ -1,4 +1,176 @@
-.filmmaker-details {
+.filmDetailsFirstRow {
+    margin-top: 80px;
+    border: 1px solid rgba(206, 206, 206, 0.342);
+    height: 440px;
+    color: #303030;
+}
+
+.blueDivFilmmaker{
+    padding: 40px;
+    height: 220px;
+    width: 100%;
+    background: rgb(70,177,212);
+    background: -moz-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46b1d4",endColorstr="#b8b0ff",GradientType=1);
+    text-align: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.filmDetailsFirstRow img {
+    width: 200px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.profileDetailsPicture {
+    position: relative;
+    bottom: -72px;
+    display: flex;
+}
+
+.infoFilmmaker {
+    position: relative;
+    font-weight: 400;
+    bottom: -72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.infoFilmmaker h5 {
+    font-size: 1.1em
+}
+
+.infoFilmmaker p {
+    margin-bottom: 0;
+}
+
+.followButtonDiv {
+    position: relative;
+    bottom: -10px;
+    left: 32px;
+    width: 240px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.aboutMe-col {
+    margin-top: 20px;
+    min-height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #303030;
+    padding: 10px;
+}
+
+.filmmakerProjects-col {
+    margin: 20px 0 20px 10px;
+    border: 1px solid rgba(206, 206, 206, 0.342);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: #303030;
+    padding: 10px;
+}
+
+.ampliate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.ampliate .projectsDisplay {
+    justify-content: flex-start;
+    min-height: 120px;
+}
+
+.ampliate .noProjects {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filmDetailsSecondRow .col-lg-3, .filmDetailsSecondRow .col-lg-9 {
+    padding: 0px;
+}
+
+.followersDiv {
+    border: 1px solid rgba(206, 206, 206, 0.342);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.followersDiv p {
+    margin: 0px;
+}
+
+@media (max-width: 988px) {
+  
+    .filmmakerProjects-col {
+    margin: 20px 0 20px 0;
+}
+}
+
+@media (max-width: 767px) {
+
+    .profileDetailsPicture {
+        display: block;
+    }
+
+    .infoFilmmaker {
+        display: block;
+    }
+
+    .followButtonDiv {
+    position: relative;
+    bottom: -80px;
+    left: 0;
+    display: block;
+    width: 100%;
+    }
+}
+
+@media (max-width: 421px) {
+    .filmDetailsFirstRow {
+        border: 0px;
+    }
+
+    .aboutMe-col {
+        min-height: 0px;
+    }
+
+    .col-lg-3 {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 352px) {
+
+   .filmDetailsFirstRow {
+       height: 480px;
+   }
+
+}
+
+/* .filmmaker-details {
     margin: 20px auto;
     box-shadow: 0px 14px 16px 1px rgba(0,0,0,0.75);
 }
@@ -11,15 +183,7 @@
     margin: 0 100px;
 }
 
-.filmDetailsFirstRow{
-    padding: 50px;
-    display:block;
-    background: rgba(2, 37, 53, 0.904);
-    color: white;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-}
+
 
 .filmDetailsSecondRow{
     padding: 80px;
@@ -51,4 +215,4 @@
     padding: 60px 40px 0 40px;
     background-color: white;
     text-align: center;
-}
+} */

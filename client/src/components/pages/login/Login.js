@@ -49,9 +49,9 @@ class Login extends Component {
     render() {
 
         return (
-            <Container>
+            <Container fluid={true} className="loginBody">
 
-                <Row>
+                <Row className="loginRow">
                     <Col className="loginForm">
 
                         <h3>Inicio de sesión</h3>
@@ -73,7 +73,7 @@ class Login extends Component {
                                 style={{ display: this.state.errorMessage ? 'block' : 'none' }}
                             >{this.state.errorMessage}</p>
 
-                            <Button className="darkButton" type="submit">Iniciar sesión</Button>
+                            <Button className="myLoginButton" type="submit">Iniciar sesión</Button>
                         </Form>
 
                         <p><small>¿No tienes cuenta? <Link to="/signup">Regístrate</Link></small></p>

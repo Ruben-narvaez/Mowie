@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import CommentService from '../../../service/comment.service'
 import './Comment.css'
@@ -26,17 +25,19 @@ class CommentCard extends Component {
     }
 
     render() {
+        const { creator, content, id } = this.state
+        
         return (
             <>
                 <div className="comments">
-                    <Col md={{ span: 8, offset: 1 }}>
-                        {this.state.creator && <h6 className="user-info">{this.state.creator.username}</h6>}
-                        <hr></hr>
-                    </Col>
-                    <Col md={{ span: 8, offset: 1 }} >
-                        {this.state.content}
-                        {this.props.creator._id === this.props.loggedInUser._id && <Button className="redButton" onClick={() => this.handleDelete(this.state.id)} variant="danger" size="md">Borrar</Button>}
-                    </Col>
+                    <div className="profileComment">
+                        <img src={creator.picture} alt="creador" />
+                        {<p className="user-info">{creator.name} {creator.lastname}</p>}
+                        {this.props.creator._id === this.props.loggedInUser._id && <Button className="deleteCommentBtn" onClick={() => this.handleDelete(id)}>Borrar</Button>}
+                    </div>
+                    <div className="commentContent">
+                        {content}
+                    </div>               
                 </div>
             </>
         )

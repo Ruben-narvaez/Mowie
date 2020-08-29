@@ -1,7 +1,8 @@
 require('dotenv').config()
 
 // Database
-require('./configs/mongoose.config')
+const mongoose = require('./configs/mongoose.config')
+mongoose.set('useFindAndModify', false);
 
 // Debugger
 require('./configs/debugger.config')

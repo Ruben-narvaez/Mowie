@@ -10,4 +10,8 @@ export default class services {
 
     getFilmmakers = () => this.service.get('/filmmakers');
     getFilmmaker = filmmakerId => this.service.get(`/filmmakers/${filmmakerId}`)
+    addFollower = (id, user) => this.service.post(`/filmmakers/addFollower/${id}`, user)
+    addFollowing = (user, id) => this.service.post(`/filmmakers/addFollowing/${user}`, id)
+    deleteFollower = (id, user) => this.service.post(`/filmmakers/deleteFollower/${id}`, user)
+    deleteFollowing = (user, id) => this.service.post(`/filmmakers/deleteFollowing/${user}`, id)
 }

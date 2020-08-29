@@ -150,6 +150,7 @@ class ProjectDetails extends Component {
     }
 
     finishProject = () => {
+        // this.componentDidMount()
         this.getProjectInfo()
         this.handleModal(false)
     }
@@ -160,84 +161,169 @@ class ProjectDetails extends Component {
     }
 
     render() {
-        return (
-            <Container className="detailsContainer" as="section" >
-                <Row className="detailsFirstRow">                  
-                <h2>{this.state.title} <br /> {this.state.format}</h2>
-                </Row>
-                <Row className="detailsSecondRow">
+        if (this.state) {
+            const { location, date, needed, creator, genre, _id, poster, title, description, users, comments} = this.state
+            return (
+                <Container className="detailsContainer" as="section">
+                    <div className="titleDetails">
+                        <h2>{this.state.title}</h2><h3>{this.state.format}</h3>
+                    </div>
+                    <Row className="detailsRow">
+                        <Col className="centerCol" lg="3">
+                            <article className="usersDiv">
+                                <div><h4>{(users && users.length > 0) ? <h4>{users.length} Usuarios apuntados</h4> : <h4>Aún no hay colaboradores</h4>}</h4></div>
+                                                               
+                                <div className="justMargin">
+                                    {users && users.map(elm => <Link key={elm.id}to={`/filmmakers/${elm._id}`}><img src={elm.picture} alt="users apuntados" /></Link>)}
+                                </div>   
+                                
+                                <div>
+                                    {(creator._id === this.props.loggedInUser._id) ? null : this.state.userOnProject === true ? <Button className="redButton" onClick={() => this.removeUserFromProject()}>Salir</Button> : <Button className="editButton" onClick={() => this.addUserToProject()}>Unirse al proyecto</Button>}
+                                </div>
 
-                    <Col className="projectInfo" md={6}>
-                        <h4>Género: {this.state.genre}</h4>
-                        {this.state.creator && <h4>Creador: <Link to={`/filmmakers/${this.state.creator._id}`}>{this.state.creator.name}</Link></h4>}
-                        {this.state.location && <h4>Localización: {this.state.location}</h4>}
-                        {this.state.date && <h4>Fecha de rodaje: {this.state.date}</h4>}
-                        {this.state.needed && <h4>Necesitamos: {this.state.needed}</h4>}
+                            </article>
+                            {creator.name === undefined ? <article className="profileDiv"><h5>No hay creador, es un proyecto de testeo</h5></article> :
+                                <Link to={`/filmmakers/${creator._id}`}>
+                                    <article className="profileDiv">
+                                        <h4>Creador</h4>
+                                        <img src={creator.picture} alt="Foto perfil creador" />
+                                        <h5>{creator.name} {creator.lastname}</h5>
+                                        <h5>Especialista en {creator.team}</h5>
+                                        <q>{creator.aboutMe}</q>
+                                    </article>
+                                </Link>}
+                            {(creator._id === this.props.loggedInUser._id) && <Button className="redButton" onClick={() => this.handleDelete(_id)} variant="danger" size="md">Borrar proyecto</Button>}
+                            <Button className="editButton" onClick={this.goBack} >Volver</Button>
+                        </Col>
+                        <Col className="" lg="9">
+                            <article className="descriptionDiv">
+                                <div className="descriptionWithImg">
+                                    <div>
+                                        <h4>{genre}</h4>
+                                        {<h4>Fecha de rodaje: {date}</h4>}
+                                        {<h4>Necesitamos: {needed}</h4>}
+                                        {<h4>Localización: {location}</h4>}
+                                    </div>
+                                    <div>
+                                        <img src={poster} alt={title}></img>
+                                    </div>
+                                </div>
+                                <div className="centerCol">
+                                    <p>{description}</p>
+                                    {(creator._id === this.props.loggedInUser._id) && <Button className="editButton" onClick={() => this.handleModal(true, "editProject")}>Editar</Button>}
+                                </div>
+                            </article>
+                            <article id="myMap" className="mapDiv">
+                                <h4>Localización</h4>
+                                <GoogleMapReact
+                                    bootstrapURLKeys={{ key: 'AIzaSyC29nPtAOUTrCqRJPRmCYcrd-amYUtPeUU' }}
+                                    center={this.state.center}
+                                    defaultZoom={13}>
+                                    <div
+                                        style={{
+                                            backgroundImage: `url(${Icon})`,
+                                            width: '64px',
+                                            height: '64px',
+                                            backgroundRepeat: 'no-repeat',
+                                       }}
+                                        lat={this.state.center.lat}
+                                        lng={this.state.center.lng}
+                                    />
+                                </GoogleMapReact>
+                            </article>
+                            <article className="commentsDiv">
+                                <h4>Comentarios</h4>
+                                {comments.map((elm) => (
+                                     <Comment key={elm._id} {...elm} history={this.props.history} componentDidMount={this.componentDidMount} loggedInUser={this.props.loggedInUser} />
+                                 ))}
+                                <Button className="editButton" onClick={() => this.handleModal(true, "createComment")}>Escribir comentario</Button>
+                            </article>
                         
-                        {this.state.creator && this.state.creator._id === this.props.loggedInUser._id && <Button className="editButton" onClick={() => this.handleModal(true, "editProject")}>Editar</Button>}
-                        {this.state.creator && this.state.creator._id === this.props.loggedInUser._id && <Button className="redButton" onClick={() => this.handleDelete(this.state._id)} variant="danger" size="md">Borrar</Button>}
-                    </Col>
-
-                    <Col md={6}>
-                        <img src={this.state.poster} alt={this.state.title}></img>
-                    </Col>
-                </Row>
-
-                <Row className="detailsThirdRow">
-                    <Col >
-                        <h4>Detalles</h4>
-                        <p>{this.state.description}</p>
-                        <div id="myMap">
-                            <GoogleMapReact
-                                bootstrapURLKeys={{ key: 'AIzaSyC29nPtAOUTrCqRJPRmCYcrd-amYUtPeUU' }}
-                                center={this.state.center}
-                                defaultZoom={this.props.zoom}>
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${Icon})`,
-                                        width: '64px',
-                                        height: '64px',
-                                        backgroundRepeat: 'no-repeat',
-                                    }}
-                                    lat={this.state.center.lat}
-                                    lng={this.state.center.lng}
-                                />
-                            </GoogleMapReact>
-                        </div>
-                    </Col>
-                </Row>
-
-                <Row className="detailsFourthRow">
-                    <Col className="projectDetailButtons">
-                        
-                        {this.state.creator && this.state.creator._id === this.props.loggedInUser._id || this.state.userOnProject === true ? <Button className="projectButton" onClick={() => this.removeUserFromProject()} variant="dark" size="md">Salir del proyecto</Button> : <Button className="projectButton" onClick={() => this.addUserToProject()} variant="dark" size="md">Unirse al proyecto</Button>}
-                        <Button className="projectButton" onClick={() => this.handleModal(true, "createComment")}>Escribir comentario</Button>
-                        <Button className="projectButton" onClick={this.goBack} >Volver</Button>
-                    </Col>
-                </Row>
-
-                <Row className="detailsFourthRow">
-                    <Col className="usersList" md={4}>
-                        {this.state.users && this.state.users.length > 0 ? <h4>{this.state.users.length} Usuarios apuntados</h4> : <h4>Aún no hay colaboradores</h4>}
-                        <ul >
-                            {this.state.users && this.state.users.map(elm => <li key={elm._id}><h5><Link to={`/filmmakers/${elm._id}`}> {elm.name}</Link> </h5></li>)}
-                        </ul>
-                    </Col>
-                    <Col md={8} >
-                        {this.state.comments &&
-                            this.state.comments.map((elm) => (
-                                <Comment key={elm._id} {...elm} history={this.props.history} componentDidMount={this.componentDidMount} loggedInUser={this.props.loggedInUser} />
-                            ))}
-                    </Col>
-                </Row>
-               
+                        </Col>
+                    </Row>
                     <Modal show={this.state.modalShow} onHide={() => this.handleModal(false)}>
-                        {this.displayModal(this.state.modalName)}
+                             {this.displayModal(this.state.modalName)}
                     </Modal>
-                
-            </Container>
-        )
+                </Container>
+            )
+                // <Container className="detailsContainer" as="section" >
+                //     <Row className="detailsFirstRow">                  
+                //     <h2>{this.state.title} <br /> {this.state.format}</h2>
+                //     </Row>
+                //     <Row className="detailsSecondRow">
+    
+                //         <Col className="projectInfo" md={6}>
+                //             <h4>Género: {genre}</h4>
+                //             {<Link to={`/filmmakers/${creator._id}`}>{creator.name} </Link>}
+                //             {<h4>Localización: {location}</h4>}
+                //             {<h4>Fecha de rodaje: {date}</h4>}
+                //             {<h4>Necesitamos: {needed}</h4>}
+                            
+                //             {(creator._id === this.props.loggedInUser._id) && <Button className="editButton" onClick={() => this.handleModal(true, "editProject")}>Editar</Button>}
+                //             {(creator._id === this.props.loggedInUser._id) && <Button className="redButton" onClick={() => this.handleDelete(_id)} variant="danger" size="md">Borrar</Button>}
+                //         </Col>
+    
+                //         <Col md={6}>
+                //             <img src={poster} alt={title}></img>
+                //         </Col>
+                //     </Row>
+    
+                //     <Row className="detailsThirdRow">
+                //         <Col >
+                //             <h4>Detalles</h4>
+                //             <p>{description}</p>
+                //             <div id="myMap">
+                //                 <GoogleMapReact
+                //                     bootstrapURLKeys={{ key: 'AIzaSyC29nPtAOUTrCqRJPRmCYcrd-amYUtPeUU' }}
+                //                     center={this.state.center}
+                //                     defaultZoom={16}>
+                //                     <div
+                //                         style={{
+                //                             backgroundImage: `url(${Icon})`,
+                //                             width: '64px',
+                //                             height: '64px',
+                //                             backgroundRepeat: 'no-repeat',
+                //                         }}
+                //                         lat={this.state.center.lat}
+                //                         lng={this.state.center.lng}
+                //                     />
+                //                 </GoogleMapReact>
+                //             </div>
+                //         </Col>
+                //     </Row>
+    
+                //     <Row className="detailsFourthRow">
+                //         <Col className="projectDetailButtons">
+                            
+                //             {creator._id === this.props.loggedInUser._id || this.state.userOnProject === true ? <Button className="projectButton" onClick={() => this.removeUserFromProject()} variant="dark" size="md">Salir del proyecto</Button> : <Button className="projectButton" onClick={() => this.addUserToProject()} variant="dark" size="md">Unirse al proyecto</Button>}
+                //             <Button className="projectButton" onClick={() => this.handleModal(true, "createComment")}>Escribir comentario</Button>
+                //             <Button className="projectButton" onClick={this.goBack} >Volver</Button>
+                //         </Col>
+                //     </Row>
+    
+                //     <Row className="detailsFourthRow">
+                //         <Col className="usersList" md={4}>
+                //             {(users && users.length > 0)? <h4>{users.length} Usuarios apuntados</h4> : <h4>Aún no hay colaboradores</h4>}
+                //             <ul >
+                //                 {users && users.map(elm => <li key={elm._id}><h5><Link to={`/filmmakers/${elm._id}`}> {elm.name}</Link> </h5></li>)}
+                //             </ul>
+                //         </Col>
+                //         <Col md={8} >
+                //             {comments.map((elm) => (
+                //                     <Comment key={elm._id} {...elm} history={this.props.history} componentDidMount={this.componentDidMount} loggedInUser={this.props.loggedInUser} />
+                //                 ))}
+                //         </Col>
+                //     </Row>
+                   
+                //         
+                    
+                // </Container>
+            
+        }
+        else {
+            return <p>Cargando...</p>
+        }
     }
-}
+} 
 
 export default ProjectDetails

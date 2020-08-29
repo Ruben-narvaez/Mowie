@@ -28,8 +28,8 @@ const Home = () => {
                 </Col>
             </Row>
             <Row className="backImg2">
-                <Col md="6"></Col>
-                <Col className="bluePhrase" md="6">
+                <Col lg="6"></Col>
+                <Col className="bluePhrase" lg="6">
                     <h2>Únete, determina tu rol y colabora en los proyectos de la comunidad</h2>
                     <Link className="loginButton" to="/login" >Entra</Link>
                 </Col>

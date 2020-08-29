@@ -6,7 +6,9 @@ const ensureLogin = require('connect-ensure-login')
 router.get('/:id', ensureLogin.ensureLoggedIn(), (req, res, next) => {
 
     User.findById(req.params.id)
-        .populate('projects')       
+        .populate('projects')
+        .populate('followers')
+        .populate('following')
         .then(data => res.json(data))
         .catch(err => next(new Error(err)))
 })

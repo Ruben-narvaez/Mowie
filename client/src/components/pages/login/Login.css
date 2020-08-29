@@ -1,10 +1,32 @@
+.loginBody {
+      background: rgb(70,177,212);
+    background: -moz-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginRow {
+    width: 960px;
+}
+
 .loginForm {
-    margin: 150px;
-    padding: 50px;
-    background-color: #557b88;
-    color: white;
+    margin: 32px;
+    padding: 80px 40px;
+    background-color: white;
+    color: #3e3e3e;
     font-weight: 600;
     box-shadow: 0 0 25px -5px rgba(0,0,0,0.75);
+    border-radius: 25px;
+    text-align: center;
+}
+
+hr {
+    margin-bottom: 32px
 }
 
 .loginForm h3 {
@@ -12,22 +34,40 @@
     font-weight: 600;
 }
 
-.darkButton {
+.myLoginButton {
     padding: 10px;
-    border: 3px solid white;
+    margin: 10px 0;
     font-weight: 600;
-    background-color: rgb(30, 42, 48);
+    border: 0px;
+     background: rgb(70,177,212);
+    background: -moz-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    background: linear-gradient(90deg, rgba(70,177,212,1) 54%, rgba(184,176,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46b1d4",endColorstr="#b8b0ff",GradientType=1);
     color: white;
-    width: 100%;
-    transition: 0.3s
+    width: 168px;
+    min-height: 40px;
+    transition: 0.3s;
+    border-radius: 16px
 }
 
-.darkButton:hover {
-    border-color: rgb(30, 42, 48);
-    color: rgb(30, 42, 48);
-    background-color: white;
+.myLoginButton:hover {
+    color: white;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.82);
+    box-shadow: 0 0 16px -6px rgba(0,0,0,0.80);
 }
 
 small {
     font-size: 1.2em
+}
+
+@media (max-width: 965px) {
+    .loginRow {
+    width: 100%;
+    }
+
+.loginForm {
+    padding: 40px 16px 8px 8px;
+    margin: 32px 8px;
+}
 }
