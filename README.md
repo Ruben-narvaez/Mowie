@@ -19,6 +19,7 @@ Mowie requiere de un registro para poder entrar, pero te facilito un par de cuen
 | ruben | ruben |
 | fran | fran |
   
-Recuerda que no van con mayúsculas
+Recuerda que no van con mayúsculas. 
+Al ser la contraseña igual que el nombre, saltará un aviso de quiebra de seguridad, pero no es importante.
   
 ### Keep Coding! :computer: :rocket:

@@ -26,7 +26,8 @@ class Signup extends Component {
                 email: '',
                 city: '',
                 aboutMe: '',
-                team: ''
+                team: '',
+                picture: ''
             },
             errorMessage: ''
         }
@@ -118,6 +119,11 @@ class Signup extends Component {
                             <Form.Group controlId="btMe">
                                 <Form.Label>Sobre mi labor</Form.Label>
                                 <Form.Control as="textarea" rows="3" name="aboutMe" type="textarea" value={this.state.aboutMe} onChange={this.handleInputChange} />
+                            </Form.Group>
+
+                            <Form.Group controlId="pic">
+                                <Form.Label>Foto de perfil</Form.Label>
+                                <Form.Control name="picture" type="text" placeholder="Adjunta una url a tu foto" value={this.state.picture} onChange={this.handleInputChange} />
                             </Form.Group>
 
                             <p

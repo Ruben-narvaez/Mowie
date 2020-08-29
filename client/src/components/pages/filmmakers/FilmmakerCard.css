@@ -18,8 +18,11 @@ h5 {
 }
 
 .cards img {
+    width: 152px;
+    height: 152px;
+    object-fit: cover;
     border: 2px solid rgb(216, 214, 214);
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .card-body {
